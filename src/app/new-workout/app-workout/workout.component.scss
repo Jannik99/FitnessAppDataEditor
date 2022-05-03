@@ -1,0 +1,55 @@
+.wrapper {
+  display: flex;
+}
+
+.card,
+.del-btn {
+  margin: 0 20px 10px 0;
+}
+
+.card {
+  text-align: center;
+  width: fit-content;
+
+  * {
+    display: block;
+  }
+}
+
+.del-btn {
+  background-color: red;
+  mat-icon {
+    margin-left: -22px;
+    font-size: 48px;
+  }
+  &:hover {
+    color: white;
+  }
+}
+
+.exercise-list {
+  max-height: 550px;
+  overflow-x: scroll;
+}
+
+.exercise {
+  text-align: center;
+  img,
+  button {
+    margin: auto;
+    margin-bottom: 5px;
+  }
+
+  padding: 10px 0;
+  border: 2px solid #ccc;
+}
+
+.add-exercises {
+  background-color: #555555;
+  width: 100%;
+}
+
+.add-btn {
+  background-color: #fff;
+  color: #555555;
+}

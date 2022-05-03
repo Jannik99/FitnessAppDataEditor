@@ -1,0 +1,22 @@
+<div class="content-wrapper">
+  <app-collection
+    *ngFor="let collection of dataService.collections; let index = index"
+    [index]="index"
+  ></app-collection>
+  <div class="buttons">
+    <button mat-button class="add-btn" (click)="addCollection()">
+      Add Collection
+    </button>
+    <button mat-button class="copy-btn" (click)="copyCollections()">
+      Copy as JSON
+    </button>
+    <div class="locale-storage-buttons">
+      <button mat-button class="save-btn" (click)="saveToLocaleStorage()">
+        Save to localStorage
+      </button>
+      <button mat-button class="load-btn" (click)="loadFromLocaleStorage()">
+        Load from localStorage
+      </button>
+    </div>
+  </div>
+</div>

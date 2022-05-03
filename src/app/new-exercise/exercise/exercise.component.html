@@ -1,0 +1,30 @@
+<div class="wrapper">
+  <mat-card class="card">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="dataService.exercises[index].name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="dataService.exercises[index].description"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Image URL</mat-label>
+      <input matInput [(ngModel)]="dataService.exercises[index].imageUrl" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>ID</mat-label>
+      <input matInput [(ngModel)]="dataService.exercises[index].id" />
+    </mat-form-field>
+  </mat-card>
+  <button
+    mat-button
+    class="del-btn"
+    (click)="dataService.removeExercise(index)"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

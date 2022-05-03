@@ -1,0 +1,70 @@
+<div class="wrapper">
+  <mat-card class="card">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="dataService.workouts[index].name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="dataService.workouts[index].description"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Image URL</mat-label>
+      <input matInput [(ngModel)]="dataService.workouts[index].imageUrl" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Playlist URL</mat-label>
+      <input matInput [(ngModel)]="dataService.workouts[index].playlistURl" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <input matInput [(ngModel)]="dataService.workouts[index].category" />
+    </mat-form-field>
+
+    <mat-slide-toggle [(ngModel)]="dataService.workouts[index].featured"
+      >Featured</mat-slide-toggle
+    >
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>ID</mat-label>
+      <input matInput [(ngModel)]="dataService.workouts[index].id" />
+    </mat-form-field>
+
+    <button mat-button class="add-exercises" (click)="openAddExercise()">
+      Add Exercises
+    </button>
+    <div>
+      Included Exercises:<br />
+      <span *ngFor="let e of dataService.workouts[index].exercises">{{
+        e.name
+      }}</span>
+    </div>
+  </mat-card>
+
+  <mat-card *ngIf="isAddExerciseOpen" class="add-exercise card">
+    <div class="exercise-list">
+      <div
+        *ngFor="let exercise of dataService.exercises; let i = index"
+        class="exercise"
+      >
+        <h3>{{ exercise.name }}</h3>
+        <p>{{ exercise.description }}</p>
+        <img [src]="exercise.imageUrl" />
+        <button
+          mat-button
+          class="add-btn"
+          (click)="addExerciseToWorkout(exercise)"
+        >
+          Add Exercise to Workout
+        </button>
+      </div>
+    </div>
+  </mat-card>
+
+  <button mat-button class="del-btn" (click)="dataService.removeWorkout(index)">
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>

@@ -1,0 +1,47 @@
+.content-wrapper {
+  width: 100%;
+}
+
+.buttons {
+  padding: 10px;
+  border: 2px solid #ccc;
+}
+
+.add-btn {
+  background-color: green;
+  color: white;
+  text-align: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.copy-btn {
+  background-color: #00bcd4;
+  color: white;
+  text-align: center;
+  margin: 10px 0;
+  width: 100%;
+}
+
+.locale-storage-buttons {
+  display: flex;
+  justify-content: space-around;
+  margin-bottom: 10px;
+  gap: 20px;
+
+  .save-btn {
+    background-color: blueviolet;
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+    width: 100%;
+  }
+
+  .load-btn {
+    background-color: #2196f3;
+    color: white;
+    text-align: center;
+    margin: 10px 0;
+    width: 100%;
+  }
+}

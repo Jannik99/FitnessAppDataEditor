@@ -1,0 +1,70 @@
+<div class="wrapper">
+  <mat-card class="card">
+    <mat-form-field appearance="fill">
+      <mat-label>Name</mat-label>
+      <input matInput [(ngModel)]="dataService.collections[index].name" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Description</mat-label>
+      <textarea
+        matInput
+        [(ngModel)]="dataService.collections[index].description"
+      ></textarea>
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Image URL</mat-label>
+      <input matInput [(ngModel)]="dataService.collections[index].imageUrl" />
+    </mat-form-field>
+    <mat-form-field appearance="fill">
+      <mat-label>Category</mat-label>
+      <input matInput [(ngModel)]="dataService.collections[index].category" />
+    </mat-form-field>
+
+    <mat-slide-toggle [(ngModel)]="dataService.collections[index].featured"
+      >Featured</mat-slide-toggle
+    >
+    <br />
+    <mat-form-field appearance="fill">
+      <mat-label>ID</mat-label>
+      <input matInput [(ngModel)]="dataService.collections[index].id" />
+    </mat-form-field>
+
+    <button mat-button class="add-workouts" (click)="openAddWorkout()">
+      Add workouts
+    </button>
+    <div>
+      Included workouts:<br />
+      <span *ngFor="let e of dataService.collections[index].workouts">{{
+        e.name
+      }}</span>
+    </div>
+  </mat-card>
+
+  <mat-card *ngIf="isAddWorkoutOpen" class="add-workout card">
+    <div class="workout-list">
+      <div
+        *ngFor="let workout of dataService.workouts; let i = index"
+        class="workout"
+      >
+        <h3>{{ workout.name }}</h3>
+        <p>{{ workout.description }}</p>
+        <img [src]="workout.imageUrl" />
+        <button
+          mat-button
+          class="add-btn"
+          (click)="addWorkoutToCollection(workout)"
+        >
+          Add workout to Collection
+        </button>
+      </div>
+    </div>
+  </mat-card>
+
+  <button
+    mat-button
+    class="del-btn"
+    (click)="dataService.removeCollection(index)"
+  >
+    <mat-icon>delete</mat-icon>
+  </button>
+</div>
