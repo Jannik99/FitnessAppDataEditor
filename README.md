@@ -1,6 +1,6 @@
 # FitnessAppDataEditor
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 13.1.2.
+Small Webfrontend to generate JSON-Data for a private Project.
 
 ## Development server
 
